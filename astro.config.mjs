@@ -10,11 +10,5 @@ export default defineConfig({
   base: '/',
   output: 'static',
   outDir: './dist',
-  publicDir: 'public',
-  build: {
-    assets: 'assets',
-    client: 'dist',
-    server: 'dist/server'
-  },
   integrations: [react(), mdx(), tailwind()]
 });

@@ -10,46 +10,53 @@ concurrency:
   group: "pages"
   cancel-in-progress: true
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18
           cache: 'npm'
-      
+
       - name: Install dependencies
         run: npm ci
-      
+
       - name: Setup Pages
         uses: actions/configure-pages@v3
-      
+
       - name: Build
         run: npm run build
-      
-      - name: Create .nojekyll file
-        run: touch dist/.nojekyll
-      
-      - name: Copy CNAME
-        run: cp public/CNAME dist/
-      
+
+      - name: Prepare deployment
+        run: |
+          touch dist/.nojekyll
+          cp public/CNAME dist/
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: dist
-      
+          path: ./dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      pages: write
+      id-token: write
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2 
