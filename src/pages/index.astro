@@ -57,7 +57,7 @@ const workExperience = [
         </div>
         
         {/* 2. Main heading */}
-        <h1 class="font-[400] mb-16 md:mx-[32px] max-w-3xl tracking-[-1px]">
+        <h1 class="font-[400] text-heading-base md:text-heading-md mb-[40px] mx-auto max-w-3xl text-center tracking-[-1px]">
           I take broad, conceptual ideas and turn them into something useful and&nbsp;valuable.
         </h1>
         
@@ -71,7 +71,7 @@ const workExperience = [
           <img 
             src="/images/Header image.png" 
             alt="Header Image" 
-            class="w-[200px] h-[200px] object-cover"
+            class="w-[200px] h-[200px] object-cover rounded-full"
           />
         </div>
       </header>
@@ -83,9 +83,9 @@ const workExperience = [
           <p class="text-base leading-6 font-normal whitespace-nowrap p-[8px]">Work</p>
           <div class="h-[1px] bg-[rgba(0,0,0,0.1)]"></div>
         </div>
-        <div class="space-y-24 md:mx-[32px] flex-row justify-center ">
+        <div class="md:mx-[32px] flex-row justify-center">
           {workExperience.map((work) => (
-            <div class="group mb-[64px]">
+            <div class="group sm:mb-[64px] mb-[40px]">
               <h3 class="text-center font-[400] m-[0px] text-[#C0C3C7]">
                 {work.title.split(' ').map((word, i, arr) => {
                   if (i === arr.length - 1) {
@@ -139,11 +139,15 @@ const workExperience = [
   :root {
     --heading-size: 64px;
     --heading-line-height: 68px;
+    --max-width: 1640px;
   }
 
   .main-container {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin: 0 auto;
+    max-width: var(--max-width);
+    width: 100%;
   }
 
   @media (min-width: 800px) {
@@ -155,8 +159,8 @@ const workExperience = [
 
   @media (min-width: 1640px) {
     .main-container {
-      padding-left: 16vw;
-      padding-right: 16vw;
+      padding-left: 260px;  /* 16vw of 1640px = 196px */
+      padding-right: 260px;
     }
   }
 
@@ -167,17 +171,26 @@ const workExperience = [
     justify-content: center;
     gap: 24px;
     margin-bottom: 32px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   @media (min-width: 800px) {
     .header-container {
-      margin-left: 32px;
-      margin-right: 32px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .header-container {
+      width: 80%;
     }
   }
 
   .header-text {
-    max-width: 900px;
+    max-width: 100%;
     font-size: 20px;
     text-align: center;
     line-height: 28px;
@@ -190,6 +203,7 @@ const workExperience = [
     }
     .header-text {
       text-align: left;
+      max-width: none;
     }
   }
 

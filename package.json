@@ -6,20 +6,21 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "deploy": "astro build && touch dist/.nojekyll"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.2.6",
-    "@astrojs/react": "^4.2.7",
-    "@headlessui/react": "^2.2.3",
-    "@heroicons/react": "^2.2.0",
-    "@tailwindcss/vite": "^4.1.7",
-    "@types/react": "^19.1.4",
-    "@types/react-dom": "^19.1.5",
-    "astro": "^5.7.13",
-    "framer-motion": "^12.12.1",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "tailwindcss": "^4.1.7"
+    "@astrojs/mdx": "^2.1.1",
+    "@astrojs/react": "^3.0.9",
+    "@astrojs/tailwind": "^5.1.0",
+    "@headlessui/react": "^1.7.17",
+    "@heroicons/react": "^2.1.1",
+    "@types/react": "^18.2.48",
+    "@types/react-dom": "^18.2.18",
+    "astro": "^4.2.6",
+    "framer-motion": "^10.18.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwindcss": "^3.4.1"
   }
 }
