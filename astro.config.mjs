@@ -9,7 +9,7 @@ export default defineConfig({
   site: 'https://christinsibi.in',
   base: '/',
   output: 'static',
-  outDir: 'dist',
+  outDir: './dist',
   publicDir: 'public',
   build: {
     assets: 'assets',
