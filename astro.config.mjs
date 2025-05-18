@@ -7,8 +7,6 @@ import tailwind from '@astrojs/tailwind';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://christinsibi.in',
-  base: '/portfolio',
   output: 'static',
-  outDir: './dist',
   integrations: [react(), mdx(), tailwind()]
 });
