@@ -24,12 +24,16 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
+      - name: Copy files to dist
+        run: |
+          cp public/CNAME dist/
+          cp public/.nojekyll dist/
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: ./dist
+          path: dist
 
   deploy:
     needs: build

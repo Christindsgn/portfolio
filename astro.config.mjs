@@ -9,9 +9,12 @@ export default defineConfig({
   site: 'https://christinsibi.in',
   base: '/',
   output: 'static',
-  outDir: './dist',
+  outDir: 'dist',
+  publicDir: 'public',
   build: {
-    assets: 'assets'
+    assets: 'assets',
+    client: 'dist',
+    server: 'dist/server'
   },
   integrations: [react(), mdx(), tailwind()]
 });
