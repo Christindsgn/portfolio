@@ -9,6 +9,7 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  deployments: write
 
 jobs:
   build:
@@ -20,14 +21,15 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
+          cache: 'npm'
       - name: Install dependencies
         run: npm ci
       - name: Build
         run: npm run build
-      - name: Copy files to dist
+      - name: Create necessary files
         run: |
+          touch dist/.nojekyll
           cp public/CNAME dist/
-          cp public/.nojekyll dist/
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
@@ -41,6 +43,9 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      pages: write
+      id-token: write
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
