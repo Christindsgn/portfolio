@@ -11,6 +11,7 @@ export default {
       '2xl': '1440px',
       '3xl': '1640px',
       'max-xl': {'max': '1099px'},
+      'custom': {'raw': '(prefers-color-scheme: dark)'},
     },
     extend: {
       colors: {
@@ -34,7 +35,7 @@ export default {
         'heading-lg': ['96px', '96px'],
       },
       fontFamily: {
-        sans: ['Inter var', 'Inter', 'system-ui', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
         mono: ['JetBrains Mono', 'monospace'],
       },
       animation: {

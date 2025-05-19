@@ -21,8 +21,25 @@ const {
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
     <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   </head>
   <body class="bg-white text-black antialiased">
     <slot />
   </body>
-</html> 
+</html>
+
+<style is:global>
+  :root {
+    --max-width: 1640px;
+  }
+
+  .main-container {
+    @apply px-4 mx-auto max-w-[var(--max-width)] w-full md:px-[12vw] 3xl:px-[260px];
+  }
+
+  .header-container {
+    @apply flex flex-col items-center justify-center gap-6 mb-8 w-full mx-auto xl:w-4/5;
+  }
+</style> 
