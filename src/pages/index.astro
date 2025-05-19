@@ -57,7 +57,7 @@ const workExperience = [
         </div>
         
         {/* 2. Main heading */}
-        <h1 class="font-[400] text-heading-base md:text-heading-md mb-[40px] mx-auto max-w-3xl text-center tracking-[-1px]">
+        <h1 class="font-[400] text-heading-base md:text-heading-md mb-[40px] mx-auto max-w-4xl text-center tracking-[-1px]">
           I take broad, conceptual ideas and turn them into something useful and&nbsp;valuable.
         </h1>
         
@@ -140,6 +140,16 @@ const workExperience = [
     --heading-size: 64px;
     --heading-line-height: 68px;
     --max-width: 1640px;
+    scroll-behavior: smooth;
+  }
+
+  html {
+    scroll-padding-top: 0;
+  }
+
+  body {
+    overflow-x: hidden;
+    position: relative;
   }
 
   .main-container {
@@ -384,6 +394,9 @@ const workExperience = [
 <script>
   // Add animation class to elements when they become visible
   document.addEventListener('DOMContentLoaded', () => {
+    // Scroll to top when page loads
+    window.scrollTo(0, 0);
+    
     const elements = document.querySelectorAll('nav, header .grid, header h1, .header-container, section, section .grid, .group, section:last-of-type .text-center');
     elements.forEach(element => {
       element.classList.add('animate-content');
