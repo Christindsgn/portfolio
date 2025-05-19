@@ -140,16 +140,19 @@ const workExperience = [
     --heading-size: 64px;
     --heading-line-height: 68px;
     --max-width: 1640px;
-    scroll-behavior: smooth;
   }
 
   html {
-    scroll-padding-top: 0;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   body {
     overflow-x: hidden;
     position: relative;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
   }
 
   .main-container {
@@ -158,6 +161,7 @@ const workExperience = [
     margin: 0 auto;
     max-width: var(--max-width);
     width: 100%;
+    position: relative;
   }
 
   @media (min-width: 800px) {
@@ -326,6 +330,7 @@ const workExperience = [
   .animate-content {
     opacity: 0;
     animation: fadeInUp 0.6s ease forwards;
+    will-change: transform, opacity;
   }
 
   /* Staggered delays for different sections */
@@ -392,14 +397,22 @@ const workExperience = [
 </style>
 
 <script>
-  // Add animation class to elements when they become visible
+  // Handle initial scroll position and animations
   document.addEventListener('DOMContentLoaded', () => {
-    // Scroll to top when page loads
+    // Force scroll to top immediately
     window.scrollTo(0, 0);
     
-    const elements = document.querySelectorAll('nav, header .grid, header h1, .header-container, section, section .grid, .group, section:last-of-type .text-center');
-    elements.forEach(element => {
-      element.classList.add('animate-content');
-    });
+    // Add a small delay before adding animation classes
+    setTimeout(() => {
+      const elements = document.querySelectorAll('nav, header .grid, header h1, .header-container, section, section .grid, .group, section:last-of-type .text-center');
+      elements.forEach(element => {
+        element.classList.add('animate-content');
+      });
+    }, 100);
+  });
+
+  // Additional check for scroll position
+  window.addEventListener('load', () => {
+    window.scrollTo(0, 0);
   });
 </script>
