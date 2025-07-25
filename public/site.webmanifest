@@ -1,5 +1,5 @@
 {
-  "name": "Christin Sibi - Portfolio",
+  "name": "Christin Sibi - Design & Tinker",
   "short_name": "Christin Sibi",
   "icons": [
     {
@@ -13,7 +13,7 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
+  "theme_color": "#e3e8d0",
+  "background_color": "#e3e8d0",
   "display": "standalone"
 } 

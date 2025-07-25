@@ -14,7 +14,9 @@ import Layout from '../layouts/Layout.astro';
 			<!-- Main Content Section -->
 			<section class="content-section">
 				<div class="main-content">
-					<h2 class="main-tagline">Design & Tinker.</h2>
+					<h2 class="main-tagline">
+						<span class="letter" style="--letter-delay: 0.05s">D</span><span class="letter" style="--letter-delay: 0.1s">e</span><span class="letter" style="--letter-delay: 0.15s">s</span><span class="letter" style="--letter-delay: 0.2s">i</span><span class="letter" style="--letter-delay: 0.25s">g</span><span class="letter" style="--letter-delay: 0.3s">n</span><span class="letter-space-small"> </span><span class="letter" style="--letter-delay: 0.35s">&</span><span class="letter-space-small"> </span><span class="letter" style="--letter-delay: 0.4s">T</span><span class="letter" style="--letter-delay: 0.45s">i</span><span class="letter" style="--letter-delay: 0.5s">n</span><span class="letter" style="--letter-delay: 0.55s">k</span><span class="letter" style="--letter-delay: 0.6s">e</span><span class="letter" style="--letter-delay: 0.65s">r</span><span class="letter" style="--letter-delay: 0.7s">.</span>
+					</h2>
 					
 					<p class="description">
 						Founding product designer at <a href="https://ops0.com/" class="link" target="_blank" rel="noopener noreferrer">ops0</a>. Previously UX designer at Eikasia Labs building <a href="https://stoqs.ai/" class="link" target="_blank" rel="noopener noreferrer">Stoqs.ai</a>
@@ -219,13 +221,22 @@ import Layout from '../layouts/Layout.astro';
 		line-height: normal; /* leading-[normal] from Figma */
 		font-optical-sizing: auto;
 		font-style: normal;
+		/* Animation */
+		opacity: 0;
+		transform: translateY(20px);
+		filter: blur(8px);
+		animation: textIntro 0.8s ease-out 0.1s forwards;
 	}
 	
 	.header-line {
 		width: 100%;
-		height: 1px;
+		height: 1.6px;
 		background-color: var(--color-black);
 		opacity: 1;
+		/* Animation */
+		transform: scaleX(0);
+		transform-origin: left;
+		animation: lineGrow 0.5s ease-out 0.4s forwards;
 	}
 	
 	/* Main Content Section - Mobile (top: 207.691px from Figma) */
@@ -256,6 +267,21 @@ import Layout from '../layouts/Layout.astro';
 		font-optical-sizing: auto;
 		font-style: normal;
 		width: 100%;
+		/* Remove main tagline animation as letters will animate individually */
+		white-space: nowrap; /* Prevent wrapping on desktop */
+	}
+	
+	.letter {
+		display: inline-block;
+		opacity: 0;
+		transform: translateY(20px);
+		filter: blur(8px);
+		animation: letterDrop 0.7s ease-out calc(0.3s + var(--letter-delay, 0s)) forwards;
+	}
+	
+	.letter-space-small {
+		display: inline-block;
+		width: 0.15em; /* Minimal space - half of normal space */
 	}
 	
 	.description {
@@ -269,6 +295,11 @@ import Layout from '../layouts/Layout.astro';
 		font-optical-sizing: auto;
 		font-style: normal;
 		width: 100%;
+		/* Animation */
+		opacity: 0;
+		transform: translateY(25px);
+		filter: blur(8px);
+		animation: textIntro 0.8s ease-out 0.6s forwards;
 	}
 	
 	.link {
@@ -303,6 +334,11 @@ import Layout from '../layouts/Layout.astro';
 		flex-direction: column;
 		gap: 8px; /* gap-2 = 8px from Figma */
 		width: 100%;
+		/* Animation */
+		opacity: 0;
+		transform: translateY(20px);
+		filter: blur(6px);
+		animation: textIntro 0.7s ease-out 0.9s forwards;
 	}
 	
 	.contact-header {
@@ -404,6 +440,11 @@ import Layout from '../layouts/Layout.astro';
 		align-items: center;
 		gap: 24px; /* gap-6 = 24px from Figma */
 		justify-content: flex-start;
+		/* Animation */
+		opacity: 0;
+		transform: translateY(15px);
+		filter: blur(5px);
+		animation: textIntro 0.6s ease-out 1.1s forwards;
 	}
 	
 	.social-link {
@@ -424,6 +465,14 @@ import Layout from '../layouts/Layout.astro';
 	.social-link svg {
 		width: 100%;
 		height: 100%;
+	}
+	
+	/* Mobile responsive adjustments */
+	@media (max-width: 480px) {
+		.main-tagline {
+			white-space: normal; /* Allow wrapping on small screens */
+			font-size: 70px; /* Slightly smaller for very small screens */
+		}
 	}
 	
 	/* ============ DESKTOP LAYOUT (769px and up) ============ */
@@ -480,6 +529,7 @@ import Layout from '../layouts/Layout.astro';
 			font-size: 96px;
 			letter-spacing: -3.84px;
 			line-height: 89px;
+			white-space: nowrap; /* Ensure no wrapping on desktop */
 		}
 		
 		/* Footer Section - Desktop */
@@ -536,18 +586,75 @@ import Layout from '../layouts/Layout.astro';
 		}
 	}
 	
+	/* ============ ANIMATIONS ============ */
+	
+	@keyframes textIntro {
+		0% {
+			opacity: 0;
+			transform: translateY(var(--translate-distance, 20px));
+			filter: blur(var(--blur-amount, 8px));
+		}
+		60% {
+			opacity: 0.8;
+			filter: blur(calc(var(--blur-amount, 8px) * 0.3));
+		}
+		100% {
+			opacity: 1;
+			transform: translateY(0);
+			filter: blur(0px);
+		}
+	}
+	
+	@keyframes letterDrop {
+		0% {
+			opacity: 0;
+			transform: translateY(20px);
+			filter: blur(8px);
+		}
+		50% {
+			opacity: 0.7;
+			filter: blur(3px);
+		}
+		100% {
+			opacity: 1;
+			transform: translateY(0);
+			filter: blur(0px);
+		}
+	}
+	
+	@keyframes lineGrow {
+		0% {
+			transform: scaleX(0);
+		}
+		100% {
+			transform: scaleX(1);
+		}
+	}
+	
 	/* High DPI Displays */
 	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
 		.header-line {
-			height: 0.5px;
+			height: 0.8px; /* Adjusted for 1.6px equivalent */
 		}
 	}
 	
 	/* Accessibility */
 	@media (prefers-reduced-motion: reduce) {
+		.header-title,
+		.main-tagline,
+		.description,
+		.contact-info,
+		.social-links,
+		.header-line,
+		.letter {
+			animation: none !important;
+			opacity: 1 !important;
+			transform: none !important;
+			filter: none !important;
+		}
+		
 		* {
 			transition: none !important;
-			animation: none !important;
 		}
 	}
 </style>
