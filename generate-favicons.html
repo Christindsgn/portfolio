@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Favicon Generator</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        canvas { border: 1px solid #ccc; margin: 10px; }
+        .size-label { font-weight: bold; margin-top: 15px; }
+    </style>
+</head>
+<body>
+    <h1>Favicon Generator for Christin Sibi Portfolio</h1>
+    <p>This will generate PNG versions of the hexagon favicon from the SVG.</p>
+    
+    <!-- Original SVG -->
+    <div class="size-label">Original SVG Design:</div>
+    <svg width="64" height="64" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="32" height="32" rx="4" fill="#e3e8d0"/>
+      <g transform="translate(16, 16)">
+        <path d="M1 -9L9 -4.5L9 4.5L1 9L-7 4.5L-7 -4.5Z" fill="#1E3A8A" opacity="0.4"/>
+        <path d="M0 -10L8 -5L8 5L0 10L-8 5L-8 -5Z" fill="#3B82F6"/>
+        <path d="M0 -10L8 -5L6 -3.5L0 -7L-6 -3.5L-8 -5Z" fill="#60A5FA"/>
+        <path d="M8 -5L8 5L6 3.5L6 -3.5Z" fill="#93C5FD"/>
+        <path d="M0 -6L4.5 -3L4.5 3L0 6L-4.5 3L-4.5 -3Z" fill="#2563EB"/>
+      </g>
+    </svg>
+
+    <!-- Generated Canvases -->
+    <div class="size-label">16x16 PNG:</div>
+    <canvas id="canvas16" width="16" height="16"></canvas>
+    <a id="download16" download="favicon-16x16.png" style="margin-left: 10px;">Download 16x16</a>
+
+    <div class="size-label">32x32 PNG:</div>
+    <canvas id="canvas32" width="32" height="32"></canvas>
+    <a id="download32" download="favicon-32x32.png" style="margin-left: 10px;">Download 32x32</a>
+
+    <div class="size-label">180x180 PNG (Apple Touch Icon):</div>
+    <canvas id="canvas180" width="180" height="180"></canvas>
+    <a id="download180" download="apple-touch-icon.png" style="margin-left: 10px;">Download 180x180</a>
+
+    <div class="size-label">192x192 PNG (Android Chrome):</div>
+    <canvas id="canvas192" width="192" height="192"></canvas>
+    <a id="download192" download="android-chrome-192x192.png" style="margin-left: 10px;">Download 192x192</a>
+
+    <div class="size-label">512x512 PNG (Android Chrome Large):</div>
+    <canvas id="canvas512" width="512" height="512"></canvas>
+    <a id="download512" download="android-chrome-512x512.png" style="margin-left: 10px;">Download 512x512</a>
+
+    <script>
+        // SVG as data URL
+        const svgData = `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="32" height="32" rx="4" fill="#e3e8d0"/>
+          <g transform="translate(16, 16)">
+            <path d="M1 -9L9 -4.5L9 4.5L1 9L-7 4.5L-7 -4.5Z" fill="#1E3A8A" opacity="0.4"/>
+            <path d="M0 -10L8 -5L8 5L0 10L-8 5L-8 -5Z" fill="#3B82F6"/>
+            <path d="M0 -10L8 -5L6 -3.5L0 -7L-6 -3.5L-8 -5Z" fill="#60A5FA"/>
+            <path d="M8 -5L8 5L6 3.5L6 -3.5Z" fill="#93C5FD"/>
+            <path d="M0 -6L4.5 -3L4.5 3L0 6L-4.5 3L-4.5 -3Z" fill="#2563EB"/>
+          </g>
+        </svg>`;
+
+        function generateFavicon(size) {
+            const canvas = document.getElementById(`canvas${size}`);
+            const ctx = canvas.getContext('2d');
+            const img = new Image();
+            
+            img.onload = function() {
+                ctx.clearRect(0, 0, size, size);
+                ctx.drawImage(img, 0, 0, size, size);
+                
+                // Create download link
+                canvas.toBlob(function(blob) {
+                    const url = URL.createObjectURL(blob);
+                    document.getElementById(`download${size}`).href = url;
+                });
+            };
+            
+            const svgBlob = new Blob([svgData], {type: 'image/svg+xml'});
+            const url = URL.createObjectURL(svgBlob);
+            img.src = url;
+        }
+
+        // Generate all sizes
+        [16, 32, 180, 192, 512].forEach(generateFavicon);
+    </script>
+
+    <div style="margin-top: 30px; padding: 15px; background: #f5f5f5; border-radius: 5px;">
+        <h3>Instructions:</h3>
+        <ol>
+            <li>Click each download link to save the PNG files</li>
+            <li>Replace the existing favicon files in your public/ directory</li>
+            <li>The favicon should update immediately on your live site</li>
+        </ol>
+        <p><strong>Note:</strong> You may need to hard refresh (Ctrl+F5 or Cmd+Shift+R) to see the new favicon in your browser due to caching.</p>
+    </div>
+</body>
+</html> 
