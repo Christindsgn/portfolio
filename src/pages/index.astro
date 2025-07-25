@@ -1,418 +1,555 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
-const workExperience = [
-  {
-    title: "Building foundational design of",
-    company: "ops0",
-    role: "Founding Product Designer",
-    period: "Jan, 2025- Now",
-    location: "Virginia, US (Remote)"
-  },
-  {
-    title: "Built conversational experience at",
-    company: "stoqs",
-    role: "Founding Team & Product Designer",
-    period: "May, 2024- Jan, 2025",
-    location: "Remote"
-  },
-  {
-    title: "Experimented with prototypes at",
-    company: "oronium",
-    role: "Product Designer- Part time",
-    period: "Aug, 2022- Aug, 2024",
-    location: "Hybrid, Trivandrum"
-  },
-  {
-    title: "Wore all hats of design at",
-    company: "Christin&Co.",
-    role: "Design Consultant- Freelance",
-    period: "May 2021- Jan, 2025",
-    location: "Hybrid, Trivandrum"
-  }
-];
 ---
 
-<Layout title="Christin Sibi">
-  <main class="min-h-screen bg-white mx-auto max-w-[1400px] main-container custom:bg-black custom:text-white">
-      {/* Nav Section - 32px height with responsive bottom margin */}
-      <nav class="mb-[96px] sm:mb-[144px] flex items-center justify-between py-[24px] text-black">
-        <div class="cursor-default">
-          <svg width="125" height="12" viewBox="0 0 125 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M7.74012 8.96375C7.64012 10.6337 6.81012 11.4688 5.25012 11.4688H2.74512C2.06512 11.4688 1.47512 11.2237 0.975117 10.7337C0.485117 10.2437 0.240117 9.65375 0.240117 8.96375V2.72375C0.240117 2.04375 0.480117 1.45875 0.960117 0.968749C1.45012 0.468749 2.04512 0.218749 2.74512 0.218749H5.25012C6.82012 0.218749 7.65012 1.05375 7.74012 2.72375H6.49512C6.39512 1.88375 5.98012 1.46375 5.25012 1.46375H3.99012C3.65012 1.46375 3.35512 1.58875 3.10512 1.83875C2.86512 2.07875 2.74512 2.37375 2.74512 2.72375V8.96375C2.74512 9.30375 2.86512 9.59875 3.10512 9.84875C3.35512 10.0987 3.65012 10.2237 3.99012 10.2237H5.25012C5.99012 10.2237 6.40512 9.80375 6.49512 8.96375H7.74012ZM11.745 11.4688V0.218749H14.25V5.21375H16.755V0.218749H19.245V11.4688H16.755V6.47375H14.25V11.4688H11.745ZM23.2499 11.4688V0.218749H28.2599C28.9399 0.218749 29.5249 0.468749 30.0149 0.968749C30.5049 1.45875 30.7499 2.04375 30.7499 2.72375V3.39875C30.7499 3.95875 30.5599 4.49875 30.1799 5.01875C29.7999 5.52875 29.1599 5.78375 28.2599 5.78375H29.5049C29.8449 5.78375 30.1349 5.90875 30.3749 6.15875C30.6249 6.39875 30.7499 6.69375 30.7499 7.04375V11.4688H28.2599V7.71875C28.2599 7.37875 28.1349 7.08875 27.8849 6.84875C27.6449 6.59875 27.3499 6.47375 26.9999 6.47375H25.7549V11.4688H23.2499ZM25.7549 5.21375H26.9999C27.3499 5.21375 27.6449 5.09375 27.8849 4.85375C28.1349 4.60375 28.2599 4.30875 28.2599 3.96875V2.72375C28.2599 2.37375 28.1349 2.07875 27.8849 1.83875C27.6449 1.58875 27.3499 1.46375 26.9999 1.46375H25.7549V5.21375ZM36.0148 11.4688V0.218749H38.5048V11.4688H36.0148ZM50.0098 2.72375H48.7648C48.6548 1.88375 48.2598 1.46375 47.5798 1.46375C47.1398 1.46375 46.8098 1.56875 46.5898 1.77875C46.3698 1.98875 46.2598 2.30375 46.2598 2.72375C46.2598 3.03375 46.3798 3.32875 46.6198 3.60875L49.2748 6.57875C49.7648 7.12875 50.0098 7.71875 50.0098 8.34875V8.96375C50.0098 9.64375 49.7648 10.2337 49.2748 10.7337C48.7848 11.2237 48.1948 11.4688 47.5048 11.4688H46.2598C45.4298 11.4688 44.8048 11.2637 44.3848 10.8537C43.9648 10.4337 43.7548 9.80375 43.7548 8.96375H45.0148C45.0148 9.05375 45.0148 9.12375 45.0148 9.17375C45.0148 9.51375 45.1448 9.77375 45.4048 9.95375C45.6648 10.1337 45.9498 10.2237 46.2598 10.2237C46.6998 10.2237 47.0148 10.1187 47.2048 9.90875C47.4048 9.68875 47.5048 9.37375 47.5048 8.96375C47.5048 8.64375 47.3848 8.34875 47.1448 8.07875L44.4898 5.10875C43.9998 4.56875 43.7548 3.97875 43.7548 3.33875V2.72375C43.7548 2.04375 43.9998 1.45875 44.4898 0.968749C44.9798 0.468749 45.5698 0.218749 46.2598 0.218749H47.5048C49.0748 0.218749 49.9098 1.05375 50.0098 2.72375ZM55.2599 11.4688V1.46375H52.7549V0.218749H60.2549V1.46375H57.7499V11.4688H55.2599ZM64.2599 11.4688V0.218749H66.7499V11.4688H64.2599ZM71.9999 11.4688V0.218749H72.5849L79.4999 6.47375V0.218749H80.7599V11.4688H80.1899L73.2599 5.21375V11.4688H71.9999ZM96.2549 2.72375H95.0099C94.8999 1.88375 94.5049 1.46375 93.8249 1.46375C93.3849 1.46375 93.0549 1.56875 92.8349 1.77875C92.6149 1.98875 92.5049 2.30375 92.5049 2.72375C92.5049 3.03375 92.6249 3.32875 92.8649 3.60875L95.5199 6.57875C96.0099 7.12875 96.2549 7.71875 96.2549 8.34875V8.96375C96.2549 9.64375 96.0099 10.2337 95.5199 10.7337C95.0299 11.2237 94.4399 11.4688 93.7499 11.4688H92.5049C91.6749 11.4688 91.0499 11.2637 90.6299 10.8537C90.2099 10.4337 89.9999 9.80375 89.9999 8.96375H91.2599C91.2599 9.05375 91.2599 9.12375 91.2599 9.17375C91.2599 9.51375 91.3899 9.77375 91.6499 9.95375C91.9099 10.1337 92.1949 10.2237 92.5049 10.2237C92.9449 10.2237 93.2599 10.1187 93.4499 9.90875C93.6499 9.68875 93.7499 9.37375 93.7499 8.96375C93.7499 8.64375 93.6299 8.34875 93.3899 8.07875L90.7349 5.10875C90.2449 4.56875 89.9999 3.97875 89.9999 3.33875V2.72375C89.9999 2.04375 90.2449 1.45875 90.7349 0.968749C91.2249 0.468749 91.8149 0.218749 92.5049 0.218749H93.7499C95.3199 0.218749 96.1549 1.05375 96.2549 2.72375ZM101.505 11.4688V0.218749H103.995V11.4688H101.505ZM109.245 11.4688V0.218749H114.255C114.935 0.218749 115.52 0.468749 116.01 0.968749C116.5 1.45875 116.745 2.04375 116.745 2.72375V3.33875C116.745 4.07875 116.535 4.65875 116.115 5.07875C115.705 5.48875 115.085 5.74375 114.255 5.84375C115.085 5.84375 115.705 6.09875 116.115 6.60875C116.535 7.10875 116.745 7.68875 116.745 8.34875V8.96375C116.745 9.64375 116.5 10.2337 116.01 10.7337C115.52 11.2237 114.935 11.4688 114.255 11.4688H109.245ZM111.75 5.21375H112.995C113.345 5.21375 113.64 5.09375 113.88 4.85375C114.13 4.60375 114.255 4.30875 114.255 3.96875V2.72375C114.255 2.37375 114.13 2.07875 113.88 1.83875C113.64 1.58875 113.345 1.46375 112.995 1.46375H111.75V5.21375ZM111.75 10.2237H112.995C113.345 10.2237 113.64 10.0987 113.88 9.84875C114.13 9.59875 114.255 9.30375 114.255 8.96375V7.71875C114.255 6.88875 113.835 6.47375 112.995 6.47375H111.75V10.2237ZM122.01 11.4688V0.218749H124.5V11.4688H122.01Z" fill="black"/>
-          </svg>
-        </div>
-        <a href="https://docs.google.com/document/d/1K9sSmVzkHgUhoMhXxsFZ_w56_WfNpaqPKLkZtZT_i64/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="nav-resume-link text-[16px] leading-[24px] no-underline !text-black hover:text-[#0079CA] hover:underline transition-all">
-          View Resume
-        </a>
-      </nav>
-
-      {/* Header Section */}
-      <header class="text-center mb-24">
-        {/* 1. Intro text with lines */}
-        <div class="grid h-[32px] grid-cols-[1fr_auto_1fr] items-center space-x-8 mb-[32px]">
-          <div class="h-[1px] bg-[rgba(0,0,0,0.1)]"></div>
-          <p class="text-base leading-6 font-normal whitespace-nowrap px-[8px]">Hey there, I'm Christin</p>
-          <div class="h-[1px] bg-[rgba(0,0,0,0.1)]"></div>
-        </div>
-        
-        {/* 2. Main heading */}
-        <h1 class="font-[400] text-heading-base md:text-heading-md mb-[40px] mx-auto max-w-4xl text-center tracking-[-1px]">
-          I take broad, conceptual ideas and turn them into something useful and&nbsp;valuable.
-        </h1>
-        
-        {/* 3. Paragraph and image container */}
-        <div class="header-container">
-          <p class="header-text">
-            I'm a product designer with 3 yoe, built and experimented multiple 0 → 1 products 
-            and ideas with early stage startups and founders, taking my product, tech and 
-            business knowledge into elevating product experiences that creates business.
-          </p>
-          <img 
-            src="/images/Header image.png" 
-            alt="Header Image" 
-            class="w-[200px] h-[200px] object-cover rounded-full"
-          />
-        </div>
-      </header>
-
-      {/* Work Section */}
-      <section>
-         <div class="grid  grid-cols-[1fr_auto_1fr] items-center space-x-8 mb-[32px]">
-          <div class="h-[1px] bg-[rgba(0,0,0,0.1)]"></div>
-          <p class="text-base leading-6 font-normal whitespace-nowrap p-[8px]">Work</p>
-          <div class="h-[1px] bg-[rgba(0,0,0,0.1)]"></div>
-        </div>
-        <div class="md:mx-[32px] flex-row justify-center">
-          {workExperience.map((work) => (
-            <div class="group sm:mb-[64px] mb-[40px]">
-              <h3 class="text-center font-[400] m-[0px] text-[#C0C3C7]">
-                {work.title.split(' ').map((word, i, arr) => {
-                  if (i === arr.length - 1) {
-                    return `\u00A0${word}`;
-                  }
-                  return ` ${word}`;
-                })}
-              </h3>
-              <h4 class="text-center m-[0px] font-[400] tracking-[-.80px] mb-[16px]">
-                {work.company}
-              </h4>
-              <div class="text-[16px] text-center leading-[28px] text-[#62686B]">
-                {work.period} / <span class="font-[600]">{work.role}</span> / {work.location}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section class="mt-[144px] mb-[144px]">
-        <div class="grid h-[32px] grid-cols-[1fr_auto_1fr] items-center space-x-8 mb-[32px]">
-          <div class="h-[1px] bg-[rgba(0,0,0,0.1)]"></div>
-          <p class="text-base leading-6 font-normal whitespace-nowrap px-[8px]">Contacts</p>
-          <div class="h-[1px] bg-[rgba(0,0,0,0.1)]"></div>
-        </div>
-
-        <div class="text-center">
-          <div class="mb-[32px]">
-            <p class="text-[16px] leading-[24px] text-[#62686B]">Email</p>
-            <a href="mailto:christin@gmail.com" class="email-heading text-[#0079CA] font-[400] tracking-[-1px] hover:text-[rgba(0,0,0,0.7)] hover:underline transition-all whitespace-nowrap block">
-              christinsibi333@gmail.com
-            </a>
-          </div>
-
-          <div>
-            <p class="text-[16px] leading-[24px] text-[#0079CA] mt-[64px]">
-              <a href="https://linkedin.com/in/christinsibi" class=" px-[24px] no-underline text-[#0079CA] hover:text-black transition-colors">LinkedIn</a>
-           
-              <a href="https://dribbble.com/christinsibi" class=" px-[24px] no-underline text-[#0079CA] hover:text-black transition-colors">Dribbble</a>
-             
-              <a href="https://behance.net/christinsibi" class="px-[24px] no-underline text-[#0079CA] hover:text-black transition-colors">Behance</a>
-            </p>
-          </div>
-        </div>
-      </section>
-  </main>
+<Layout title="Christin Sibi - Design & Tinker">
+	<main class="portfolio-container">
+		<div class="portfolio-layout">
+			<!-- Header Section -->
+			<header class="header-section">
+				<h1 class="header-title">CHRISTIN SIBI</h1>
+				<div class="header-line"></div>
+			</header>
+			
+			<!-- Main Content Section -->
+			<section class="content-section">
+				<div class="main-content">
+					<h2 class="main-tagline">Design & Tinker.</h2>
+					
+					<p class="description">
+						Founding product designer at <a href="https://ops0.com/" class="link" target="_blank" rel="noopener noreferrer">ops0</a>. Previously UX designer at Eikasia Labs building <a href="https://stoqs.ai/" class="link" target="_blank" rel="noopener noreferrer">Stoqs.ai</a>
+					</p>
+				</div>
+			</section>
+			
+			<!-- Footer Contact Section -->
+			<footer class="footer-section">
+				<div class="contact-info">
+					<div class="contact-header">
+						<span class="contact-label" id="contact-label">Drop a MaIL</span>
+					</div>
+					<div class="contact-details">
+						<button class="copy-icon" id="copy-email-btn" aria-label="Copy email to clipboard" title="Copy email to clipboard">
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+								<path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+							</svg>
+						</button>
+						<a href="mailto:christinsibi333@gmail.com" class="email" id="email-address">christinsibi333@gmail.com</a>
+					</div>
+				</div>
+				
+				<div class="social-links">
+					<a href="https://www.behance.net/christinsibi" class="social-link" aria-label="Behance" target="_blank" rel="noopener noreferrer">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+							<path d="M22 7h-7v-2h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14h-8.027c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zm-9.574 6.988h-6.466v-14.967h6.953c5.476.081 5.58 5.444 2.72 6.906 3.461 1.26 3.577 8.061-3.207 8.061zm-3.466-8.988h3.584c2.508 0 2.906-3-.312-3h-3.272v3zm3.391 3h-3.391v3.016h3.341c3.055 0 2.868-3.016.05-3.016z"/>
+						</svg>
+					</a>
+					<a href="https://www.linkedin.com/in/christin-sibi/" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+							<path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+						</svg>
+					</a>
+				</div>
+			</footer>
+		</div>
+	</main>
 </Layout>
 
+<script>
+	// Copy email functionality
+	document.addEventListener('DOMContentLoaded', function() {
+		const copyButton = document.getElementById('copy-email-btn');
+		const contactLabel = document.getElementById('contact-label');
+		const emailAddress = document.getElementById('email-address');
+		
+		const originalText = 'Drop a MaIL';
+		const copiedText = 'Email Copied!';
+		const emailToCopy = 'christinsibi333@gmail.com';
+		
+		let timeoutId = null;
+		
+		if (copyButton && contactLabel && emailAddress) {
+			copyButton.addEventListener('click', async function() {
+				try {
+					// Copy email to clipboard
+					await navigator.clipboard.writeText(emailToCopy);
+					
+					// Clear any existing timeout
+					if (timeoutId) {
+						clearTimeout(timeoutId);
+					}
+					
+					// Change text immediately
+					contactLabel.textContent = copiedText;
+					contactLabel.classList.add('copied');
+					copyButton.classList.add('copied');
+					
+					// Revert back after 3 seconds
+					timeoutId = setTimeout(() => {
+						contactLabel.textContent = originalText;
+						contactLabel.classList.remove('copied');
+						copyButton.classList.remove('copied');
+						timeoutId = null;
+					}, 3000);
+					
+				} catch (err) {
+					// Fallback for browsers that don't support clipboard API
+					console.error('Failed to copy email:', err);
+					
+					// Try the older method
+					try {
+						const textArea = document.createElement('textarea');
+						textArea.value = emailToCopy;
+						textArea.style.position = 'fixed';
+						textArea.style.left = '-999999px';
+						textArea.style.top = '-999999px';
+						document.body.appendChild(textArea);
+						textArea.focus();
+						textArea.select();
+						document.execCommand('copy');
+						document.body.removeChild(textArea);
+						
+						// Show success message even with fallback
+						if (timeoutId) {
+							clearTimeout(timeoutId);
+						}
+						
+						contactLabel.textContent = copiedText;
+						contactLabel.classList.add('copied');
+						copyButton.classList.add('copied');
+						
+						timeoutId = setTimeout(() => {
+							contactLabel.textContent = originalText;
+							contactLabel.classList.remove('copied');
+							copyButton.classList.remove('copied');
+							timeoutId = null;
+						}, 3000);
+						
+					} catch (fallbackErr) {
+						console.error('Fallback copy method also failed:', fallbackErr);
+						
+						// Show error message briefly
+						if (timeoutId) {
+							clearTimeout(timeoutId);
+						}
+						
+						contactLabel.textContent = 'Copy Failed';
+						contactLabel.classList.add('error');
+						
+						timeoutId = setTimeout(() => {
+							contactLabel.textContent = originalText;
+							contactLabel.classList.remove('error');
+							timeoutId = null;
+						}, 2000);
+					}
+				}
+			});
+		}
+	});
+</script>
+
 <style>
-  :root {
-    --heading-size: 64px;
-    --heading-line-height: 68px;
-    --max-width: 1640px;
-  }
-
-  html {
-    scroll-behavior: smooth;
-    overflow-x: hidden;
-  }
-
-  body {
-    overflow-x: hidden;
-    position: relative;
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
-  }
-
-  .main-container {
-    padding-left: 16px;
-    padding-right: 16px;
-    margin: 0 auto;
-    max-width: var(--max-width);
-    width: 100%;
-    position: relative;
-  }
-
-  @media (min-width: 800px) {
-    .main-container {
-      padding-left: 12vw;
-      padding-right: 12vw;
-    }
-  }
-
-  @media (min-width: 1640px) {
-    .main-container {
-      padding-left: 260px;  /* 16vw of 1640px = 196px */
-      padding-right: 260px;
-    }
-  }
-
-  .header-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 24px;
-    margin-bottom: 32px;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  @media (min-width: 800px) {
-    .header-container {
-      margin-left: auto;
-      margin-right: auto;
-    }
-  }
-
-  @media (min-width: 1280px) {
-    .header-container {
-      width: 80%;
-    }
-  }
-
-  .header-text {
-    max-width: 100%;
-    font-size: 20px;
-    text-align: center;
-    line-height: 28px;
-  }
-
-  @media (min-width: 1100px) {
-    .header-container {
-      flex-direction: row;
-      gap: 64px;
-    }
-    .header-text {
-      text-align: left;
-      max-width: none;
-    }
-  }
-
-  .email-heading {
-    font-size: 24px;
-    line-height: 32px;
-  }
-
-  @media (min-width: 800px) {
-    .email-heading {
-      font-size: 48px;
-      line-height: 48px;
-    }
-  }
-
-  @media (min-width: 1100px) {
-    .email-heading {
-      font-size: 64px;
-      line-height: 64px;
-    }
-  }
-
-  @media (max-width: 1099px) {
-    :root {
-      --heading-size: 48px;
-      --heading-line-height: 48px;
-    }
-    .header-text {
-      margin-bottom: 0;
-    }
-  }
-
-  @media (max-width: 800px) {
-    .header-container {
-      margin-left: 0;
-      margin-right: 0;
-    }
-    h1 {
-      margin-left: 0;
-      margin-right: 0;
-    }
-  }
-
-  @media (max-width: 640px) {
-    :root {
-      --heading-size: 32px;
-      --heading-line-height: 36px;
-    }
-    .header-text {
-      font-size: 16px;
-      line-height: 24px;
-    }
-    .text-base {
-      font-size: 14px;
-      line-height: 20px;
-    }
-    .text-[20px] {
-      font-size: 16px !important;
-      line-height: 24px !important;
-    }
-    .text-[16px] {
-      font-size: 14px !important;
-      line-height: 20px !important;
-    }
-  }
-
-  h1, h3, h4, .big-text {
-    font-size: var(--heading-size);
-    line-height: var(--heading-line-height);
-  }
-
-  h1, h2, h3, h4 {
-    font-feature-settings: "ss01", "ss02", "ss03";
-  }
-  
-  text {
-    font-feature-settings: "ss01", "ss02", "ss03";
-  }
-
-  /* Global font styles */
-  :root {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  }
-
-  .nav-resume-link {
-    color: black;
-  }
-  
-  .nav-resume-link:hover {
-    color: #0079CA;
-  }
-
-  .nav-resume-link:active {
-    color: #005791;
-  }
-
-  /* Animation keyframes */
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  /* Animation classes */
-  .animate-content {
-    opacity: 0;
-    animation: fadeInUp 0.6s ease forwards;
-    will-change: transform, opacity;
-  }
-
-  /* Staggered delays for different sections */
-  nav {
-    animation-delay: 300ms;
-  }
-
-  header .grid {
-    animation-delay: 450ms;
-  }
-
-  header h1 {
-    animation-delay: 600ms;
-  }
-
-  .header-container {
-    animation-delay: 750ms;
-  }
-
-  /* Work section animations */
-  section:first-of-type .grid {
-    animation-delay: 900ms;
-  }
-
-  .group {
-    opacity: 0;
-    animation: fadeInUp 0.6s ease forwards;
-  }
-
-  .group:nth-child(1) {
-    animation-delay: 1050ms;
-  }
-
-  .group:nth-child(2) {
-    animation-delay: 1200ms;
-  }
-
-  .group:nth-child(3) {
-    animation-delay: 1350ms;
-  }
-
-  .group:nth-child(4) {
-    animation-delay: 1500ms;
-  }
-
-  /* Contact section animations */
-  section:last-of-type {
-    opacity: 0;
-    animation: fadeInUp 0.6s ease forwards;
-    animation-delay: 1650ms;
-  }
-
-  section:last-of-type .grid {
-    opacity: 0;
-    animation: fadeInUp 0.6s ease forwards;
-    animation-delay: 1800ms;
-  }
-
-  section:last-of-type .text-center {
-    opacity: 0;
-    animation: fadeInUp 0.6s ease forwards;
-    animation-delay: 1950ms;
-  }
+	:root {
+		--font-roboto: 'Roboto', Arial, sans-serif;
+		--font-roboto-condensed: 'Roboto Condensed', Arial, sans-serif;
+		--color-black: #000000;
+		--bg-color: #e3e8d0;
+	}
+	
+	/* Ensure fonts are loaded and applied correctly */
+	* {
+		font-feature-settings: normal;
+		font-optical-sizing: auto;
+		box-sizing: border-box;
+	}
+	
+	/* Prevent any scrolling and use dynamic viewport for mobile */
+	html, body {
+		height: 100dvh; /* Use dynamic viewport height to exclude browser UI */
+		overflow: hidden;
+		margin: 0;
+		padding: 0;
+	}
+	
+	.portfolio-container {
+		height: 100dvh; /* Dynamic viewport height for mobile */
+		width: 100vw;
+		background-color: var(--bg-color);
+		display: flex;
+		align-items: stretch;
+		justify-content: center;
+		padding: 0;
+		overflow: hidden;
+		position: fixed;
+		top: 0;
+		left: 0;
+	}
+	
+	.portfolio-layout {
+		width: 100%;
+		max-width: 360px; /* Exact mobile width from Figma */
+		height: 100dvh;
+		background-color: var(--bg-color);
+		position: relative;
+		overflow: hidden;
+	}
+	
+	/* ============ MOBILE DESIGN - EXACT FIGMA SPECS ============ */
+	
+	/* Header Section - Mobile (top: 40.165px from Figma) */
+	.header-section {
+		position: absolute;
+		top: 40px; /* Rounded from 40.165px */
+		left: 20px; /* 5 * 4px = 20px from Figma */
+		width: 320px; /* w-80 = 320px from Figma */
+		display: flex;
+		flex-direction: column;
+		gap: 8px; /* gap-2 = 8px from Figma */
+		z-index: 10;
+	}
+	
+	.header-title {
+		font-size: 20px; /* Exact from Figma: text-[20px] */
+		text-transform: uppercase;
+		font-weight: 600; /* font-semibold */
+		font-family: var(--font-roboto-condensed);
+		color: var(--color-black);
+		text-align: left;
+		margin: 0;
+		line-height: normal; /* leading-[normal] from Figma */
+		font-optical-sizing: auto;
+		font-style: normal;
+	}
+	
+	.header-line {
+		width: 100%;
+		height: 1px;
+		background-color: var(--color-black);
+		opacity: 1;
+	}
+	
+	/* Main Content Section - Mobile (top: 207.691px from Figma) */
+	.content-section {
+		position: absolute;
+		top: 208px; /* Rounded from 207.691px */
+		left: 20px; /* left-5 = 20px from Figma */
+		width: 320px; /* w-80 = 320px from Figma */
+		z-index: 5;
+	}
+	
+	.main-content {
+		display: flex;
+		flex-direction: column;
+		gap: 16px; /* gap-4 = 16px from Figma code */
+		width: 100%;
+	}
+	
+	.main-tagline {
+		font-size: 80px; /* Exact from Figma: text-[80px] */
+		letter-spacing: -3.2px; /* CORRECTED: Exact from Figma: tracking-[-3.2px] */
+		line-height: 82px; /* CORRECTED: Exact from Figma: leading-[82px] */
+		font-weight: 500; /* font-medium from Figma */
+		font-family: var(--font-roboto);
+		color: var(--color-black);
+		text-align: left;
+		margin: 0;
+		font-optical-sizing: auto;
+		font-style: normal;
+		width: 100%;
+	}
+	
+	.description {
+		font-family: var(--font-roboto);
+		font-size: 24px; /* Exact from Figma: text-[24px] */
+		font-weight: 400; /* font-normal from Figma */
+		color: var(--color-black);
+		line-height: 34px; /* Exact from Figma: leading-[34px] */
+		margin: 0;
+		letter-spacing: -0.48px; /* Exact from Figma: tracking-[-0.48px] */
+		font-optical-sizing: auto;
+		font-style: normal;
+		width: 100%;
+	}
+	
+	.link {
+		color: #0478a3; /* Exact from Figma */
+		text-decoration: underline;
+		text-decoration-style: solid;
+		text-underline-position: from-font; /* Exact from Figma */
+		text-decoration-skip-ink: none; /* For Stoqs.ai link */
+		font-weight: 400;
+		font-family: inherit;
+		transition: opacity 0.2s ease;
+	}
+	
+	.link:hover {
+		opacity: 0.8;
+	}
+	
+	/* Footer Section - Mobile */
+	.footer-section {
+		position: absolute;
+		bottom: 40px; /* 40px margin from bottom to prevent trimming */
+		left: 20px; /* left-5 = 20px from Figma */
+		width: 320px; /* w-80 = 320px from Figma */
+		display: flex;
+		flex-direction: column;
+		gap: 24px; /* gap-6 = 24px from Figma */
+		align-items: flex-start;
+	}
+	
+	.contact-info {
+		display: flex;
+		flex-direction: column;
+		gap: 8px; /* gap-2 = 8px from Figma */
+		width: 100%;
+	}
+	
+	.contact-header {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 8px; /* gap-2 = 8px from Figma */
+		width: 100%;
+	}
+	
+	.contact-label {
+		font-family: var(--font-roboto-condensed);
+		font-size: 14px; /* Exact from Figma: text-[14px] */
+		font-weight: 400; /* font-normal from Figma */
+		color: var(--color-black);
+		line-height: 20px; /* Exact from Figma: leading-[20px] */
+		letter-spacing: 0;
+		font-optical-sizing: auto;
+		font-style: normal;
+		text-transform: uppercase;
+		font-stretch: 75%; /* From Figma: 'wdth' 75 */
+		transition: color 0.3s ease;
+		white-space: nowrap;
+	}
+	
+	.contact-label.copied {
+		color: #0478a3;
+	}
+	
+	.contact-label.error {
+		color: #d32f2f;
+	}
+	
+	.contact-details {
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start; /* items-start from Figma */
+		gap: 8px; /* gap-2 = 8px from Figma */
+		width: 100%;
+	}
+	
+	.copy-icon {
+		width: 24px; /* size-6 = 24px from Figma */
+		height: 24px;
+		color: var(--color-black);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: none;
+		border: none;
+		cursor: pointer;
+		padding: 0;
+		transition: all 0.2s ease;
+		border-radius: 4px;
+		flex-shrink: 0;
+	}
+	
+	.copy-icon:hover {
+		background-color: rgba(0, 0, 0, 0.1);
+		transform: scale(1.1);
+	}
+	
+	.copy-icon:active {
+		transform: scale(0.95);
+	}
+	
+	.copy-icon.copied {
+		color: #0478a3;
+		background-color: rgba(4, 120, 163, 0.1);
+	}
+	
+	.copy-icon:focus {
+		outline: 2px solid #0478a3;
+		outline-offset: 2px;
+	}
+	
+	.email {
+		font-family: var(--font-roboto);
+		font-size: 18px; /* Exact from Figma: text-[18px] */
+		font-weight: 600; /* font-semibold from Figma */
+		color: var(--color-black);
+		text-decoration: none;
+		line-height: 24px; /* Exact from Figma: leading-[24px] */
+		letter-spacing: -0.36px; /* Exact from Figma: tracking-[-0.36px] */
+		display: block;
+		font-optical-sizing: auto;
+		font-style: normal;
+		transition: text-decoration 0.2s ease;
+		white-space: nowrap;
+		flex-shrink: 0;
+	}
+	
+	.email:hover {
+		text-decoration: underline;
+	}
+	
+	.social-links {
+		display: flex;
+		align-items: center;
+		gap: 24px; /* gap-6 = 24px from Figma */
+		justify-content: flex-start;
+	}
+	
+	.social-link {
+		width: 24px; /* size-6 = 24px from Figma */
+		height: 24px;
+		color: var(--color-black);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: opacity 0.2s ease;
+		flex-shrink: 0;
+	}
+	
+	.social-link:hover {
+		opacity: 0.7;
+	}
+	
+	.social-link svg {
+		width: 100%;
+		height: 100%;
+	}
+	
+	/* ============ DESKTOP LAYOUT (769px and up) ============ */
+	@media (min-width: 769px) {
+		/* Use regular viewport height for desktop */
+		html, body {
+			height: 100vh;
+		}
+		
+		.portfolio-container {
+			height: 100vh;
+		}
+		
+		.portfolio-layout {
+			max-width: 1440px;
+			height: 100vh;
+			margin: 0 auto;
+		}
+		
+		/* Header Section - Desktop */
+		.header-section {
+			position: absolute;
+			top: 40px;
+			left: 50%;
+			transform: translateX(-50%);
+			width: calc(100% - 80px);
+			max-width: 1152px;
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
+			align-items: center;
+		}
+		
+		.header-title {
+			text-align: center;
+			white-space: nowrap;
+		}
+		
+		/* Main Content Section - Desktop */
+		.content-section {
+			position: absolute;
+			top: 137px;
+			left: 50%;
+			transform: translateX(-50%);
+			width: calc(100% - 80px);
+			max-width: 640px;
+		}
+		
+		.main-content {
+			gap: 32px;
+		}
+		
+		.main-tagline {
+			font-size: 96px;
+			letter-spacing: -3.84px;
+			line-height: 89px;
+		}
+		
+		/* Footer Section - Desktop */
+		.footer-section {
+			position: absolute;
+			bottom: 40px;
+			left: 50%;
+			transform: translateX(-50%);
+			width: calc(100% - 80px);
+			max-width: 640px;
+			display: flex;
+			flex-direction: row;
+			gap: 24px;
+			align-items: end;
+			justify-content: space-between;
+			top: auto;
+		}
+		
+		.contact-info {
+			flex-grow: 1;
+			width: auto;
+		}
+		
+		.contact-header {
+			margin-bottom: 8px;
+			width: auto;
+		}
+		
+		.contact-label {
+			flex: none;
+			white-space: normal;
+		}
+		
+		.contact-details {
+			align-items: center;
+		}
+		
+		.email {
+			white-space: nowrap;
+			width: auto;
+		}
+		
+		.social-links {
+			flex-shrink: 0;
+			width: auto;
+			justify-content: flex-end;
+		}
+	}
+	
+	/* Landscape Orientation on Mobile - Use dynamic viewport */
+	@media (max-width: 768px) and (orientation: landscape) {
+		.footer-section {
+			top: 400px; /* Adjust for landscape */
+		}
+	}
+	
+	/* High DPI Displays */
+	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+		.header-line {
+			height: 0.5px;
+		}
+	}
+	
+	/* Accessibility */
+	@media (prefers-reduced-motion: reduce) {
+		* {
+			transition: none !important;
+			animation: none !important;
+		}
+	}
 </style>
 
-<script>
-  // Handle initial scroll position and animations
-  document.addEventListener('DOMContentLoaded', () => {
-    // Force scroll to top immediately
-    window.scrollTo(0, 0);
-    
-    // Add a small delay before adding animation classes
-    setTimeout(() => {
-      const elements = document.querySelectorAll('nav, header .grid, header h1, .header-container, section, section .grid, .group, section:last-of-type .text-center');
-      elements.forEach(element => {
-        element.classList.add('animate-content');
-      });
-    }, 100);
-  });
 
-  // Additional check for scroll position
-  window.addEventListener('load', () => {
-    window.scrollTo(0, 0);
-  });
-</script>
