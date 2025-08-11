@@ -61,7 +61,7 @@
 
 .nav-link {
   color: #000000;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -78,7 +78,7 @@
   border: 1px solid #000000;
   background: transparent;
   padding: 12px 24px;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   color: #000000;
   cursor: pointer;
@@ -151,7 +151,7 @@
   color: #ffffff;
   border: none;
   padding: 12px 24px;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   cursor: pointer;
   width: auto;
@@ -235,7 +235,7 @@
 
 .footer-link {
   font-family: 'Mozilla Text', sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   color: #000000;
   text-decoration: none;
@@ -395,7 +395,7 @@
   }
   
   .description {
-    font-size: 18px;
+    font-size: 16px;
   }
   
   .portfolio-button {
@@ -418,13 +418,13 @@
 
 @media (max-width: 480px) {
   .portfolio-container {
-    padding: 16px 4vw;
+    padding: 20px 4vw;
     min-height: 100vh;
     overflow-y: auto;
   }
   
   .main-content {
-    gap: 32px;
+    gap:64px;
     margin-bottom: 64px; /* Ensure 64px spacing before footer */
     padding: 64px 0; /* Add 64px padding top and bottom */
   }
@@ -443,11 +443,18 @@
   }
   
   .right-content {
-    height: 200px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
   
   .footer-section { /* Ensure 64px spacing from main content */
     padding-top: 40px;
+  }
+  .footer-links-left{
+    gap: 24px;
   }
 }
 
