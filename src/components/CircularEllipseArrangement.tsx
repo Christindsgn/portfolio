@@ -4,7 +4,7 @@ import './CircularEllipseArrangement.css';
 const CircularEllipseArrangement: React.FC = () => {
   const outerEllipses = 7;
   const radius = 150; // Distance from center to outer ellipses
-  const ellipseSize = { width: 60, height: 30 }; // Size of each ellipse
+  // Size of each ellipse is now hardcoded in CSS
   
   const generateEllipsePositions = () => {
     const positions = [];

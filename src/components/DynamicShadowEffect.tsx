@@ -60,10 +60,11 @@ const DynamicShadowEffect: React.FC = () => {
     }
 
     function updateShadows(mouseX: number, mouseY: number) {
-      // Center ellipse
-      const centerRect = centerEllipse.getBoundingClientRect();
-      const centerShadow = calculateShadow(centerRect, mouseX, mouseY);
-      centerEllipse.style.boxShadow = `${centerShadow.x}px ${centerShadow.y}px ${centerShadow.blur}px rgba(0, 0, 0, ${centerShadow.opacity})`;
+      if (centerEllipse) {
+        const centerRect = centerEllipse.getBoundingClientRect();
+        const centerShadow = calculateShadow(centerRect, mouseX, mouseY);
+        centerEllipse.style.boxShadow = `${centerShadow.x}px ${centerShadow.y}px ${centerShadow.blur}px rgba(0, 0, 0, ${centerShadow.opacity})`;
+      }
 
       // Orbit ellipses
       orbitRefs.forEach((ref) => {

@@ -1,4 +1,3 @@
-import React from 'react'
 import PortfolioPage from './components/PortfolioPage'
 import './App.css'
 

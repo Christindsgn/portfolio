@@ -45,11 +45,9 @@ export const formatLocation = (location: LocationData): string => {
   return parts.join(', ');
 };
 
-export const calculateSunPosition = (latitude: number, longitude: number, date: Date = new Date()): SunPosition => {
+export const calculateSunPosition = (latitude: number, date: Date = new Date()): SunPosition => {
   // Convert date to Julian Day
   const year = date.getFullYear();
-  const month = date.getMonth() + 1;
-  const day = date.getDate();
   const hour = date.getHours() + date.getMinutes() / 60;
   
   // Simplified sun position calculation

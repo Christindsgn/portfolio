@@ -1,32 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './PortfolioPage.css';
 import OrbitEllipseLight from './OrbitEllipseLight';
 import PasswordModal from './PasswordModal';
-import { fetchVisitorLocation, formatLocation, calculateSunPosition, getShadowDirection } from '../utils/locationService';
-import type { LocationData } from '../utils/locationService';
 
 const PortfolioPage: React.FC = () => {
-  const [locationData, setLocationData] = useState<LocationData | null>(null);
-  const [sunShadowDirection, setSunShadowDirection] = useState<{ x: number; y: number }>({ x: 0, y: 1 });
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showCopyMessage, setShowCopyMessage] = useState(false);
   const emailAddress = 'christinsibi333@gmail.com';
-
-  useEffect(() => {
-    const getLocation = async () => {
-      const location = await fetchVisitorLocation();
-      if (location) {
-        setLocationData(location);
-        
-        // Calculate sun position and shadow direction based on visitor's location and current time
-        const sunPosition = calculateSunPosition(location.latitude, location.longitude);
-        const shadowDirection = getShadowDirection(sunPosition);
-        setSunShadowDirection(shadowDirection);
-      }
-    };
-
-    getLocation();
-  }, []);
+  const sunShadowDirection = { x: 0, y: 1 };
 
   const handlePasswordSubmit = (password: string): string | void => {
     // Simple password validation - you can change this password
