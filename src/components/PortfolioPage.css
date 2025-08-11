@@ -276,7 +276,8 @@
 .copy-message {
   position: fixed;
   top: 20px;
-  right: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   background-color: #000000;
   color: #ffffff;
   padding: 12px 16px;
@@ -291,26 +292,63 @@
   pointer-events: none;
 }
 
-.copy-message:hover {
-  text-decoration: none;
+/* Desktop positioning - bottom center */
+@media (min-width: 769px) {
+  .copy-message {
+    top: auto;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* Mobile positioning - top center (default) */
+@media (max-width: 768px) {
+  .copy-message {
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 @keyframes slideInOut {
   0% {
     opacity: 0;
-    transform: translateX(100%);
+    transform: translateX(-50%) translateY(-100%);
   }
   10% {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateX(-50%) translateY(0);
   }
   90% {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateX(-50%) translateY(0);
   }
   100% {
     opacity: 0;
-    transform: translateX(100%);
+    transform: translateX(-50%) translateY(-100%);
+  }
+}
+
+/* Desktop animation - slide from bottom */
+@media (min-width: 769px) {
+  @keyframes slideInOut {
+    0% {
+      opacity: 0;
+      transform: translateX(-50%) translateY(100%);
+    }
+    10% {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+    90% {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(-50%) translateY(100%);
+    }
   }
 }
 
