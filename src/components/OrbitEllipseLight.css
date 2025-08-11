@@ -1,0 +1,44 @@
+.oel-root {
+  position: relative;
+}
+
+.oel-center-ellipse,
+.oel-orbit-ellipse {
+  position: absolute;
+  border-radius: 50%;
+  transition: box-shadow 0.1s ease-out;
+}
+
+/* Center ellipse should be perfectly centered */
+.oel-center-ellipse {
+  background: #111;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Default fills (can be overridden by parent) */
+.oel-orbit-ellipse { background: #111; }
+
+/* Optional: varied gradients like the demo (commented out) */
+/*
+.oel-orbit-1 { background: linear-gradient(45deg, #ff9ff3, #f368e0); }
+.oel-orbit-2 { background: linear-gradient(45deg, #54a0ff, #2e86de); }
+.oel-orbit-3 { background: linear-gradient(45deg, #5f27cd, #341f97); }
+.oel-orbit-4 { background: linear-gradient(45deg, #00d2d3, #01a3a4); }
+.oel-orbit-5 { background: linear-gradient(45deg, #ff6348, #e17055); }
+.oel-orbit-6 { background: linear-gradient(45deg, #feca57, #ff9ff3); }
+.oel-orbit-7 { background: linear-gradient(45deg, #48dbfb, #0abde3); }
+*/
+
+.oel-light-cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1000;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 20px rgba(255,255,255,0.6);
+}
