@@ -117,29 +117,22 @@ const PortfolioPage: React.FC = () => {
           </div>
         
           <a href={`mailto:${emailAddress}`} className="footer-link email-link">
-          {showCopyMessage && (
-              <div className="copy-message">
-                Email copied!
-              </div>
-            )}
-            <button type="button" className="icon-button" onClick={handleCopyEmail} aria-label="Copy email" title="Copy email">
-              <svg
-                className="copy-icon"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M16 1H4C2.895 1 2 1.895 2 3V17H4V3H16V1Z" fill="currentColor"/>
-                <path d="M19 5H8C6.895 5 6 5.895 6 7V21C6 22.105 6.895 23 8 23H19C20.105 23 21 22.105 21 21V7C21 5.895 20.105 5 19 5ZM19 21H8V7H19V21Z" fill="currentColor"/>
-              </svg>
-            </button>
-            
-            {emailAddress}
-          </a>
+                        <button type="button" className="icon-button" onClick={handleCopyEmail} aria-label="Copy email" title="Copy email">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="copy-icon">
+                            <path d="M8 4V2C8 1.44772 8.44772 1 9 1H21C21.5523 1 22 1.44772 22 2V14C22 14.5523 21.5523 15 21 15H19M8 4H6C5.44772 4 5 4.44772 5 5V17C5 17.5523 5.44772 18 6 18H18C18.5523 18 19 17.5523 19 17V15M8 4H9C9.55228 4 10 4.44772 10 5V7C10 7.55228 9.55228 8 9 8H8V4Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </button>
+                        {emailAddress}
+                      </a>
         </div>
       </div>
+
+      {/* Toast Notification */}
+      {showCopyMessage && (
+        <div className="copy-message">
+          Email copied!
+        </div>
+      )}
 
       {/* Password Modal */}
       <PasswordModal
