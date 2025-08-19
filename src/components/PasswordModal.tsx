@@ -63,8 +63,15 @@ const PasswordModal: React.FC<PasswordModalProps> = ({ isOpen, onClose, onPasswo
             </div>
             <p className="form-help">
               If you don't have password,{' '}
-              <span className="help-link">ping me</span>
+              <a
+                className="help-link"
+                href="mailto:christinsibi333@gmail.com"
+                style={{ color: '#000000', textDecoration: 'underline' }}
+              >
+                ping me
+              </a>
             </p>
+            
             <button type="submit" className="submit-button">
               View Portfolio
             </button>

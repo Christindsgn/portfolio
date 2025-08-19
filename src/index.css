@@ -13,12 +13,14 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  text-decoration: inherit;
+a, a:link, a:visited {
+  color: inherit !important;
+  text-decoration: none !important;
+  font-weight: inherit !important;
 }
-a:hover {
-  text-decoration: underline;
+a:hover, a:focus, a:active {
+  color: inherit !important;
+  text-decoration: underline !important;
 }
 
 body {
