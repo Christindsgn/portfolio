@@ -63,11 +63,11 @@ const PortfolioPage: React.FC = () => {
         </div>
         
         <div className="navigation-section">
-          <div className="nav-links">
+          <div className="nav-links" style={{ display: 'none' }}>
             <span className="nav-link">About</span>
             <span className="nav-link">Experiments</span>
           </div>
-          <button className="resume-button">
+          <button className="resume-button" onClick={() => window.open('/resume.pdf', '_blank')}>
             <span>Resume</span>
           </button>
         </div>
