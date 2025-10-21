@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './PortfolioPage.css';
 import OrbitEllipseLight from './OrbitEllipseLight';
 import PasswordModal from './PasswordModal';
+import { initGA, trackResumeDownload, trackEmailClick, trackSocialLinkClick, trackPortfolioView } from '../utils/analytics';
 
 const PortfolioPage: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -9,13 +10,18 @@ const PortfolioPage: React.FC = () => {
   const emailAddress = 'christinsibi333@gmail.com';
   const sunShadowDirection = { x: 0, y: 1 };
 
+  // Initialize Google Analytics
+  useEffect(() => {
+    initGA();
+  }, []);
+
   const handlePasswordSubmit = (password: string): string | void => {
     // Simple password validation - you can change this password
     const correctPassword = "portfolio2025"; // Change this to your desired password
     
     if (password === correctPassword) {
       // Redirect to the Google Drive link
-      window.open('https://drive.google.com/file/d/13pU4eiFO1jvflspFr_7HOMuoatiCj6Hh/view?usp=sharing', '_blank');
+      window.open('https://www.figma.com/deck/ZyjncwO5c62u35FiwLTRAE/Portfolio-Oct-2025?node-id=1-935&t=2qFMh5i2hY8uLdMH-1', '_blank');
       setIsModalOpen(false);
     } else {
       // Return error message to show in modal
@@ -26,6 +32,8 @@ const PortfolioPage: React.FC = () => {
   const handleCopyEmail = async (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
+    
+    trackEmailClick();
     
     try {
       await navigator.clipboard.writeText(emailAddress);
@@ -59,7 +67,7 @@ const PortfolioPage: React.FC = () => {
               <path d="M40.9492 40.7812H0.949219V0.78125H40.9492V40.7812ZM20.9482 10.1699C12.0486 10.1699 4.83398 14.9207 4.83398 20.7812C4.83398 26.6418 12.0486 31.3926 20.9482 31.3926C29.8479 31.3926 37.0625 26.6418 37.0625 20.7812C37.0625 14.9207 29.8479 10.1699 20.9482 10.1699Z" fill="black"/>
             </svg>
           </div>
-          <span className="name-text">CHRISTIN SIBI</span>
+          {/* <span className="name-text">CHRISTIN SIBI</span> */}
         </div>
         
         <div className="navigation-section">
@@ -67,7 +75,10 @@ const PortfolioPage: React.FC = () => {
             <span className="nav-link">About</span>
             <span className="nav-link">Experiments</span>
           </div>
-          <button className="resume-button" onClick={() => window.open('/resume.pdf', '_blank')}>
+          <button className="resume-button" onClick={() => {
+            trackResumeDownload();
+            window.open('/Resume-Christin_Sibi-For Portfolio.pdf', '_blank');
+          }}>
             <span>Resume</span>
           </button>
         </div>
@@ -76,18 +87,23 @@ const PortfolioPage: React.FC = () => {
       {/* Main Content Section */}
       <div className="main-content">
         <div className="left-content">
-          <h1 className="main-heading">Designer. Tinkerer</h1>
+          <h1 className="main-heading">Christin Sibi</h1>
           <p className="description">
-            <span className="regular-text">Founding product designer at </span>
+            <span className="regular-text">Currently leading design at </span>
             <span className="highlighted-link">ops0</span>
-            <span className="highlighted-link">.</span>
-            <span className="regular-text"> Previously UX designer at Eikasia Labs building </span>
+            <span className="regular-text margin-bottom-16">, creating AI-powered developer tools that streamline infrastructure management.</span>
+      
+            <span className="regular-text"> Previously, designed </span>
             <span className="highlighted-link">Stoqs.ai</span>
+            <span className="regular-text">, defining generative UX that transforms how users interact with financial AI.</span>
           </p>
           
           <div className="cta-section">
-            <button className="portfolio-button" onClick={() => setIsModalOpen(true)}>
-              <span>View Portfolio</span>
+            <button className="portfolio-button" onClick={() => {
+              trackPortfolioView();
+              setIsModalOpen(true);
+            }}>
+              <span>View Portfolio Deck</span>
             </button>
             {/* <p className="read-time">2 min read</p> */}
           </div>
@@ -111,9 +127,9 @@ const PortfolioPage: React.FC = () => {
       <div className="footer-section">
         <div className="footer-links">
           <div className="footer-links-left">
-            <a href="https://www.linkedin.com/in/christin-sibi/" target="_blank" rel="noopener noreferrer" className="footer-link">LinkedIn</a>
-            <a href="https://www.behance.net/christinsibi" target="_blank" rel="noopener noreferrer" className="footer-link">Behance</a>
-            <a href="https://dribbble.com/christin-sibi" target="_blank" rel="noopener noreferrer" className="footer-link">Dribbble</a>
+            <a href="https://www.linkedin.com/in/christin-sibi/" target="_blank" rel="noopener noreferrer" className="footer-link" onClick={() => trackSocialLinkClick('linkedin')}>LinkedIn</a>
+            <a href="https://www.behance.net/christinsibi" target="_blank" rel="noopener noreferrer" className="footer-link" onClick={() => trackSocialLinkClick('behance')}>Behance</a>
+            <a href="https://dribbble.com/christin-sibi" target="_blank" rel="noopener noreferrer" className="footer-link" onClick={() => trackSocialLinkClick('dribbble')}>Dribbble</a>
           </div>
         
           <a href={`mailto:${emailAddress}`} className="footer-link email-link">

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './PasswordModal.css';
+import { trackPortfolioView } from '../utils/analytics';
 
 interface PasswordModalProps {
   isOpen: boolean;
@@ -62,7 +63,7 @@ const PasswordModal: React.FC<PasswordModalProps> = ({ isOpen, onClose, onPasswo
               {error && <span className="error-message">{error}</span>}
             </div>
             <p className="form-help">
-              If you don't have password,{' '}
+             For password please check resume shared with you or{" "}
               <a
                 className="help-link"
                 href="mailto:christinsibi333@gmail.com"

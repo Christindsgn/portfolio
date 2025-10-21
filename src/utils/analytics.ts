@@ -1,0 +1,56 @@
+// Google Analytics configuration
+export const GA_MEASUREMENT_ID = 'G-DN1HPH2R16'; // Replace with your actual Google Analytics ID
+
+// Initialize Google Analytics
+export const initGA = () => {
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('config', GA_MEASUREMENT_ID, {
+      page_title: document.title,
+      page_location: window.location.href,
+    });
+  }
+};
+
+// Track page views
+export const trackPageView = (url: string) => {
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('config', GA_MEASUREMENT_ID, {
+      page_path: url,
+    });
+  }
+};
+
+// Track custom events
+export const trackEvent = (action: string, category: string, label?: string, value?: number) => {
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('event', action, {
+      event_category: category,
+      event_label: label,
+      value: value,
+    });
+  }
+};
+
+// Specific tracking functions for your portfolio
+export const trackPortfolioView = () => {
+  trackEvent('portfolio_view', 'engagement', 'portfolio_deck_opened');
+};
+
+export const trackResumeDownload = () => {
+  trackEvent('resume_download', 'engagement', 'resume_pdf_opened');
+};
+
+export const trackEmailClick = () => {
+  trackEvent('email_click', 'engagement', 'email_link_clicked');
+};
+
+export const trackSocialLinkClick = (platform: string) => {
+  trackEvent('social_click', 'engagement', `${platform}_link_clicked`);
+};
+
+// Declare gtag function for TypeScript
+declare global {
+  interface Window {
+    gtag: (...args: any[]) => void;
+  }
+}
