@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './PasswordModal.css';
-import { trackPortfolioView } from '../utils/analytics';
 
 interface PasswordModalProps {
   isOpen: boolean;
