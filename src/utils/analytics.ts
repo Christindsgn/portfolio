@@ -18,6 +18,9 @@ export const initGA = () => {
     // But we can ensure it's ready for tracking
     if (posthog.__loaded) {
       posthog.identify();
+      console.log('PostHog initialized successfully');
+    } else {
+      console.log('PostHog not loaded yet');
     }
   }
 };
@@ -62,8 +65,19 @@ export const trackEvent = (
     }
     
     // Track with PostHog
-    if (posthog.__loaded) {
-      posthog.capture(action, posthogParams);
+    try {
+      if (posthog.__loaded) {
+        posthog.capture(action, posthogParams);
+        if (import.meta.env.MODE === 'development') {
+          console.log('PostHog event captured:', action, posthogParams);
+        }
+      } else {
+        if (import.meta.env.MODE === 'development') {
+          console.log('PostHog not loaded, event not captured:', action);
+        }
+      }
+    } catch (error) {
+      console.error('PostHog tracking error:', error);
     }
   }
 };

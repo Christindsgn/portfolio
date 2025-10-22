@@ -13,6 +13,14 @@ createRoot(document.getElementById('root')!).render(
         person_profiles: 'identified_only',
         capture_exceptions: true,
         debug: import.meta.env.MODE === 'development',
+        loaded: (posthog) => {
+          if (import.meta.env.MODE === 'development') {
+            console.log('PostHog loaded in development mode');
+          }
+        },
+        // Ensure CORS is handled properly
+        cross_subdomain_cookie: false,
+        secure_cookie: import.meta.env.MODE === 'production',
       }}
     >
       <App />
