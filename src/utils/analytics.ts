@@ -1,33 +1,70 @@
-// Google Analytics configuration
+// Analytics configuration
+import posthog from 'posthog-js';
+
 export const GA_MEASUREMENT_ID = 'G-DN1HPH2R16'; // Replace with your actual Google Analytics ID
 
-// Initialize Google Analytics
+// Initialize both Google Analytics and PostHog
 export const initGA = () => {
-  if (typeof window !== 'undefined' && window.gtag) {
-    window.gtag('config', GA_MEASUREMENT_ID, {
-      page_title: document.title,
-      page_location: window.location.href,
-    });
+  if (typeof window !== 'undefined') {
+    // Initialize Google Analytics
+    if (window.gtag) {
+      window.gtag('config', GA_MEASUREMENT_ID, {
+        page_title: document.title,
+        page_location: window.location.href,
+      });
+    }
+    
+    // Initialize PostHog (it's already initialized by PostHogProvider in main.tsx)
+    // But we can ensure it's ready for tracking
+    if (posthog.__loaded) {
+      posthog.identify();
+    }
   }
 };
 
-// Track page views
+// Track page views (Google Analytics + PostHog)
 export const trackPageView = (url: string) => {
-  if (typeof window !== 'undefined' && window.gtag) {
-    window.gtag('config', GA_MEASUREMENT_ID, {
-      page_path: url,
+  if (typeof window !== 'undefined') {
+    if (window.gtag) {
+      window.gtag('config', GA_MEASUREMENT_ID, {
+        page_path: url,
+      });
+    }
+    posthog.capture('$pageview', {
+      path: url,
     });
   }
 };
 
-// Track custom events
-export const trackEvent = (action: string, category: string, label?: string, value?: number) => {
-  if (typeof window !== 'undefined' && window.gtag) {
-    window.gtag('event', action, {
-      event_category: category,
-      event_label: label,
-      value: value,
-    });
+// Track custom events (Google Analytics + PostHog)
+export const trackEvent = (
+  action: string,
+  category: string,
+  label?: string,
+  value?: number
+) => {
+  const gaParams: Record<string, any> = {
+    event_category: category,
+  };
+  if (label) gaParams.event_label = label;
+  if (value !== undefined) gaParams.value = value;
+
+  const posthogParams: Record<string, any> = {
+    category: category,
+  };
+  if (label) posthogParams.label = label;
+  if (value !== undefined) posthogParams.value = value;
+
+  if (typeof window !== 'undefined') {
+    // Track with Google Analytics
+    if (window.gtag) {
+      window.gtag('event', action, gaParams);
+    }
+    
+    // Track with PostHog
+    if (posthog.__loaded) {
+      posthog.capture(action, posthogParams);
+    }
   }
 };
 
