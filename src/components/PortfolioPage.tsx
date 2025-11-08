@@ -21,7 +21,7 @@ const PortfolioPage: React.FC = () => {
     
     if (password === correctPassword) {
       // Redirect to the Google Drive link
-      window.open('https://www.figma.com/deck/ZyjncwO5c62u35FiwLTRAE/Portfolio-Oct-2025?node-id=1-935&t=2qFMh5i2hY8uLdMH-1', '_blank');
+      window.open('https://www.figma.com/slides/pWWRsTpYL7a5x2ZifJuxRD/Portfolio-Deck?node-id=1-8067&t=8zFbrFt8P2yoyX6O-1', '_blank');
       setIsModalOpen(false);
     } else {
       // Return error message to show in modal
