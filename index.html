@@ -1,37 +1,97 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Christin Sibi - Portfolio</title>
-    
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DN1HPH2R16"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-DN1HPH2R16');
-    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Christin Sibi — Portfolio</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/fav32x32.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/fav180x180.png"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Reddit+Sans:wght@300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-    <script type="text/javascript">
-      // Single Page Apps for GitHub Pages
-      // MIT License
-      // https://github.com/rafgraph/spa-github-pages
-      (function(l) {
-        if (l.search[1] === '/' ) {
-          var decoded = l.search.slice(1).split('&').map(function(s) { 
-            return s.replace(/~and~/g, '&')
-          }).join('?');
-          window.history.replaceState(null, null,
-              l.pathname.slice(0, -1) + decoded + l.hash
-          );
-        }
-      }(window.location))
-    </script>
+    <div class="page">
+      <div class="page__inner">
+        <header class="header">
+          <div class="header__brand">
+            <img
+              src="assets/logo-christin-sibi.svg"
+              alt="Christin Sibi logotype"
+              class="header__logo-image"
+            />
+          </div>
+        </header>
+
+        <main>
+          <section id="hero" class="hero" aria-labelledby="hero-title">
+            <div class="hero__content">
+              <h1 id="hero-title" class="hero__title">
+                Building software tools for new age
+              </h1>
+              <p class="hero__subtitle">
+                Christin is a Product Designer 2 at <a class="link-inline" href="https://www.solera.com/" target="_blank">Solera Holdings</a>, where he designs global vehicle lifecycle management products and drives AI adoption in design and delivery workflows to improve team velocity.
+              </p>
+              <div class="hero__actions">
+                <a href="mailto:christinsibi333@gmail.com" target="_blank" class="button button--primary">Lets talk</a>
+              </div>
+            </div>
+            <div class="hero__visual" aria-hidden="true">
+              <img
+                src="assets/hero-avatar.png"
+                alt="3D avatar of Christin Sibi"
+                class="hero__avatar-image"
+              />
+            </div>
+          </section>
+        </main>
+
+        <footer class="footer">
+          <div class="footer__left tooltip" data-tooltip="Still in draft">
+            More about me
+          </div>
+          <nav class="footer__center" aria-label="Secondary">
+            <a
+              href="https://www.linkedin.com/in/christin-sibi/"
+              class="footer__link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Linkedin
+              <span aria-hidden="true">↗</span>
+            </a>
+            <!-- <a href="https://twitter.com" class="footer__link">
+              Twitter
+              <span aria-hidden="true">↗</span>
+            </a>
+            <a href="https://github.com" class="footer__link">
+              Github
+              <span aria-hidden="true">↗</span>
+            </a> -->
+          </nav>
+          <div class="footer__right">Copyright 2026. Christin Sibi</div>
+        </footer>
+      </div>
+    </div>
   </body>
 </html>
