@@ -25,73 +25,52 @@
       crossorigin
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Reddit+Sans:wght@300..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=DM+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="page">
-      <div class="page__inner">
-        <header class="header">
-          <div class="header__brand">
-            <img
-              src="assets/logo-christin-sibi.svg"
-              alt="Christin Sibi logotype"
-              class="header__logo-image"
-            />
-          </div>
-        </header>
+      <header class="header">
+        <nav class="nav" aria-label="Primary">
+          <a href="#" class="nav__link">Resume</a>
+          <a
+            href="https://www.linkedin.com/in/christin-sibi/"
+            class="nav__link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Linkedin</a>
+          <a href="mailto:christinsibi333@gmail.com" class="nav__link">Email</a>
+        </nav>
+      </header>
 
-        <main>
-          <section id="hero" class="hero" aria-labelledby="hero-title">
-            <div class="hero__content">
-              <h1 id="hero-title" class="hero__title">
-                Building software tools for new age
-              </h1>
-              <p class="hero__subtitle">
-                Christin is a Product Designer 2 at <a class="link-inline" href="https://www.solera.com/" target="_blank">Solera Holdings</a>, where he designs global vehicle lifecycle management products and drives AI adoption in design and delivery workflows to improve team velocity.
-              </p>
-              <div class="hero__actions">
-                <a href="mailto:christinsibi333@gmail.com" target="_blank" class="button button--primary">Lets talk</a>
-              </div>
-            </div>
-            <div class="hero__visual" aria-hidden="true">
-              <img
-                src="assets/hero-avatar.png"
-                alt="3D avatar of Christin Sibi"
-                class="hero__avatar-image"
-              />
-            </div>
-          </section>
-        </main>
-
-        <footer class="footer">
-          <div class="footer__left tooltip" data-tooltip="Still in draft">
-            More about me
+      <main>
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="hero__intro">
+            <p class="hero__eyebrow">Christin Sibi</p>
+            <h1 id="hero-title" class="hero__title">
+              Enterprise platforms, Agentic workflows, and the tooling in between
+            </h1>
           </div>
-          <nav class="footer__center" aria-label="Secondary">
-            <a
-              href="https://www.linkedin.com/in/christin-sibi/"
-              class="footer__link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Linkedin
-              <span aria-hidden="true">↗</span>
-            </a>
-            <!-- <a href="https://twitter.com" class="footer__link">
-              Twitter
-              <span aria-hidden="true">↗</span>
-            </a>
-            <a href="https://github.com" class="footer__link">
-              Github
-              <span aria-hidden="true">↗</span>
-            </a> -->
-          </nav>
-          <div class="footer__right">Copyright 2026. Christin Sibi</div>
-        </footer>
-      </div>
+          <div class="hero__body">
+            <p class="hero__paragraph">
+              At Solera, I design enterprise software across the dealer pillar
+              — currently leading UX for the dealer platform and its products.
+              I also build the org's agent tooling — prototyping kit, skills,
+              and whatever the teams need next — pushing design quality and
+              velocity up with every release.
+            </p>
+            <p class="hero__paragraph hero__paragraph--muted">
+              Previously, founding designer at Ops0 — building and validating
+              agentic solutions for enterprise DevOps teams, proven with six
+              design partners. Before that, first UX designer at Stoqs, taking
+              an AI assistant for stock-market insights from 0→1.
+            </p>
+          </div>
+          <a href="mailto:christinsibi333@gmail.com" class="button">Lets Talk</a>
+        </section>
+      </main>
     </div>
   </body>
 </html>
